@@ -429,30 +429,20 @@ def api_all():
 
 @app.route('/api/v1/resources/general_sex_orient', methods=['GET'])
 def api_1():
-    # Check if an ID was provided as part of the URL.
-    # If ID is provided, assign it to a variable.
-    # If no ID is provided, display an error in the browser.
+
     if 'id' in request.args:
         id = request.args['id']
     else:
         return "Error: No id field provided. Please specify an id."
 
-    # Create an empty list for our results
     results = []
     results.append(general_sex_orient[id])
  
-
-        
-
-    # Use the jsonify function from Flask to convert our list of
-    # Python dictionaries to the JSON format.
     return jsonify(results)
 
 @app.route('/api/v1/resources/specific_sex_orient', methods=['GET'])
 def api_2():
-    # Check if an ID was provided as part of the URL.
-    # If ID is provided, assign it to a variable.
-    # If no ID is provided, display an error in the browser.
+
     if 'id' in request.args:
         id = request.args['id']
     else:
@@ -461,12 +451,7 @@ def api_2():
     # Create an empty list for our results
     results = []
     results.append(specific_sex_orient[id])
- 
 
-        
-
-    # Use the jsonify function from Flask to convert our list of
-    # Python dictionaries to the JSON format.
     return jsonify(results)
 
 app.run()
